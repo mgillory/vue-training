@@ -4,8 +4,9 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </nav>
-
-    <router-view />
+    <transition name="router-animation">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -48,5 +49,38 @@ export default {
     color: rgb(0, 110, 255);
     font-weight: bold;
     margin-right: 15px;
+  }
+  .page {
+    position: fixed;
+    width: inherit;
+  }
+  .router-animation-enter-active {
+    animation: coming .3s;
+    animation-delay: .2s;
+    opacity: 0;
+  }
+  .router-animation-leave-active {
+    animation: going 1s;
+  }
+  @keyframes going {
+    from {
+      transform: translateX(0);
+
+    }
+    to {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes gcoming {
+    from {
+      transform: translateX(-50px);
+
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 </style>
