@@ -55,8 +55,8 @@ export default {
     width: inherit;
   }
   .router-animation-enter-active {
-    animation: coming .3s;
-    animation-delay: .2s;
+    animation: coming 1s;
+    animation-delay: .5s;
     opacity: 0;
   }
   .router-animation-leave-active {
@@ -73,7 +73,7 @@ export default {
     }
   }
   
-  @keyframes gcoming {
+  @keyframes coming {
     from {
       transform: translateX(-50px);
 
